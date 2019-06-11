@@ -1,5 +1,7 @@
 
 public class Institution {
+	
+
 	private int id;
 	private String name;
 	private String address;
@@ -14,5 +16,10 @@ public class Institution {
 	public String getName()
 	{
 		return this.name;
+	}
+	
+	public int getTax()
+	{
+		return 50;
 	}
 }

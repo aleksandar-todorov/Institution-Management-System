@@ -1,8 +1,15 @@
 
 public class University extends Institution{
+	
 
-	public University(int id, String name, String address) {
+	public University(int id, String name, String address) 
+	{
 		super(id, name, address);
 	}
-
+	
+	@Override
+	public int getTax()
+	{
+		return 100;
+	}
 }

@@ -20,6 +20,11 @@ public class Student {
 		return this.name;
 	}
 	
+	public String getGender()
+	{
+		return this.gender;
+	}
+	
 	public double getGrade()
 	{
 		return this.grade;
