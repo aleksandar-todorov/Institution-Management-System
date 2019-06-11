@@ -22,8 +22,10 @@ public class SchoolManagement {
 		institutions.add(university2);
 
 		List<Student> students = new ArrayList<>();
-		
-		for (int i = 0; i < 50; i++) //creating 50 Students
+		/*
+		 * creating 50 Students
+		 */
+		for (int i = 0; i < 50; i++) 
 		{
 			String name = "Student" + (i + 1);
 			int age = i + 10;
@@ -45,6 +47,8 @@ public class SchoolManagement {
 			String insitutionName = institutions.get(entityId -1).getName();
 			
 			System.out.println("Hello " + students.get(i).getName() + " and welcome to " + insitutionName);
+			// for clarity and testing purposes uncomment next row
+			// System.out.println("with grade : " + students.get(i).getGrade() + " and gender : " + students.get(i).getGender());
 		}
 		System.out.println();
 		
