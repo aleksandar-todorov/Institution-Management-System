@@ -1,6 +1,7 @@
 
 public class Institution {
 	
+	private static final int TAX = 50;
 
 	private int id;
 	private String name;
@@ -20,6 +21,6 @@ public class Institution {
 	
 	public int getTax()
 	{
-		return 50;
+		return TAX;
 	}
 }

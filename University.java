@@ -1,6 +1,7 @@
 
 public class University extends Institution{
 	
+	private static final int TAX = 100;
 
 	public University(int id, String name, String address) 
 	{
@@ -10,6 +11,6 @@ public class University extends Institution{
 	@Override
 	public int getTax()
 	{
-		return 100;
+		return TAX;
 	}
 }

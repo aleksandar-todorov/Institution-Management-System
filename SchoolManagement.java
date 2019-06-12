@@ -52,8 +52,6 @@ public class SchoolManagement {
 		}
 		System.out.println();
 		
-		double topGrade = 0;
-		String topStudentName = "";
 		double topMaleGrade = 0;
 		String topMaleStudentName = "";
 		double topFemaleGrade = 0;
@@ -69,13 +67,7 @@ public class SchoolManagement {
 			{
 				double currentGrade = students.get(i*10 + j).getGrade();
 				sumGrade += currentGrade;
-				
-				if(currentGrade > topGrade)
-				{
-					topGrade = currentGrade;
-					topStudentName = students.get(i*10 + j).getName();
-				}
-				
+							
 				if(j%2 != 0) 
 				{
 					if(currentGrade > topFemaleGrade)
@@ -94,6 +86,9 @@ public class SchoolManagement {
 				}
 			}
 			
+			/*
+			 * we need another for loop because we need sumGrade to be completely calculated
+			 */
 			for(int j = 0; j < 10; j++) 
 			{
 			double currentContribution = students.get(i*10 + j).calculatePayment(sumGrade/10, institutions.get(i).getTax());
@@ -107,11 +102,18 @@ public class SchoolManagement {
 			}
 			
 			System.out.printf("Avarage grade from all students in %s is: %.2f %n", institutions.get(i).getName() , sumGrade/10);
-		
 		}
 		
 		System.out.println();
-		System.out.printf("The top performing Student is %s with grade: %.2f %n", topStudentName, topGrade);
+		if(topMaleGrade > topFemaleGrade)
+		{
+			System.out.printf("The top performing Student is %s with grade: %.2f %n", topMaleStudentName, topMaleGrade);
+		}
+		else 
+		{
+			System.out.printf("The top performing Student is %s with grade: %.2f %n", topFemaleStudentName, topFemaleGrade);
+		}
+		
 		System.out.printf("The top performing female Student is %s with grade: %.2f %n", topFemaleStudentName, topFemaleGrade);
 		System.out.printf("The top performing male Student is %s with grade: %.2f %n", topMaleStudentName, topMaleGrade);
 		System.out.printf("The total income from all schools and unis are : %.2f %n", totalIncome);
